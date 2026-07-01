@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -245,12 +246,11 @@ export function HoneyvaultHighlights() {
 
           <div className="highlight-media-column">
             <article className="highlight-media large-media lift-card">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/croissant-car/croissant-car.png"
-                alt="Honeyvault Bakery interior and pastries"
-                loading="lazy"
-                decoding="async"
+              <Image
+                src="/images/croissant-car/croissant-car.webp"
+                alt="Honeyvault Bakery branded croissant delivery truck"
+                fill
+                sizes="(max-width: 768px) 100vw, 430px"
               />
             </article>
             <p>Real words from our demo bakery guests.</p>

@@ -13,7 +13,8 @@
     "dev": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next dev",
     "build": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next build",
     "start": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next start",
-    "lint": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next lint"
+    "lint": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next lint",
+    "audit:images": "node scripts/audit-images.js"
   },
   "engines": {
     "node": ">=18.17.0"

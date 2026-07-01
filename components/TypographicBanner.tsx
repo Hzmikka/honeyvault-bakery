@@ -6,7 +6,7 @@ type TypographicBannerProps = {
 };
 
 export function TypographicBanner({
-  src = "/images/typographic-banner/typographic-banner.png",
+  src = "/images/typographic-banner/typographic-banner.webp",
   mobileSrc,
   alt = "Honeyvault Bakery typographic banner",
   className,

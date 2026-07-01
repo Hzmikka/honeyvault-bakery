@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { KeyboardEvent, useState } from "react";
 
 const locations = [
@@ -9,8 +10,8 @@ const locations = [
     name: "Honeyvault Wynwood",
     address: "255 NW 24th St",
     meta: "255 NW 24th St · 7am-6pm",
-    image: "/images/Ubication/Flagship.png",
-    mapImage: "/images/location/Honeyvault-Wynwood.png",
+    image: "/images/Ubication/Flagship.webp",
+    mapImage: "/images/location/Honeyvault-Wynwood.webp",
     detail:
       "Our signature pastry studio with laminated classics, seasonal viennoiserie, and specialty coffee. Open Mon-Sun, 7:00 AM-6:00 PM.",
   },
@@ -20,8 +21,8 @@ const locations = [
     name: "Honeyvault Coral Gables",
     address: "151 Miracle Mile",
     meta: "151 Miracle Mile · 7:30am-5:30pm",
-    image: "/images/Ubication/Neighborhood-stop.png",
-    mapImage: "/images/location/Honeyvault-Coral-Gables.png",
+    image: "/images/Ubication/Neighborhood-stop.webp",
+    mapImage: "/images/location/Honeyvault-Coral-Gables.webp",
     detail:
       "A softer neighborhood stop for brunch boxes, pastries, and custom sweets. Open Mon-Sat, 7:30 AM-5:30 PM.",
   },
@@ -31,8 +32,8 @@ const locations = [
     name: "Honeyvault South Beach",
     address: "845 Collins Ave",
     meta: "845 Collins Ave · 8am-7pm",
-    image: "/images/Ubication/Beach-stop.png",
-    mapImage: "/images/location/Honeyvault-South-Beach.png",
+    image: "/images/Ubication/Beach-stop.webp",
+    mapImage: "/images/location/Honeyvault-South-Beach.webp",
     detail:
       "A bright coastal pickup spot for coffee, croissants, and weekend dessert boxes. Open daily, 8:00 AM-7:00 PM.",
   },
@@ -65,13 +66,12 @@ export function LocationsSection() {
         <div className="locations-grid">
           <article className="location-feature">
             <div className="location-map-media location-map-frame">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 className="location-map-image"
                 src={selectedLocation.mapImage}
                 alt={`Stylized pink map showing ${selectedLocation.name} location`}
-                loading="lazy"
-                decoding="async"
+                fill
+                sizes="(max-width: 768px) 100vw, 520px"
               />
             </div>
             <p className="category">About Honeyvault</p>
@@ -104,8 +104,12 @@ export function LocationsSection() {
                     onKeyDown={(event) => handleKeyDown(event, index)}
                   >
                     <span className="location-icon" aria-hidden="true">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={location.image} alt="" loading="lazy" decoding="async" />
+                      <Image
+                        src={location.image}
+                        alt=""
+                        fill
+                        sizes="78px"
+                      />
                     </span>
                     <span className="location-copy">
                       <span className="category">{location.label}</span>

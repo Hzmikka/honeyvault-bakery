@@ -24,8 +24,8 @@ export default function Home() {
         <Reveal><LocationsSection /></Reveal>
         <Reveal>
           <TypographicBanner
-            src="/images/typographic-banner/typographic-banner-2.png"
-            mobileSrc="/images/typographic-banner/typographic-banner-movil.png"
+            src="/images/typographic-banner/typographic-banner-2.webp"
+            mobileSrc="/images/typographic-banner/typographic-banner-movil.webp"
             alt="Honeyvault Bakery typographic banner"
             className="flush-top"
           />

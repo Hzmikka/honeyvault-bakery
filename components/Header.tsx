@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent } from "react";
+import Image from "next/image";
 import { Search } from "lucide-react";
 import { navLinks } from "@/data/content";
 
@@ -107,8 +108,14 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <a className="logo" href="#top" aria-label="Honeyvault Bakery home">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/logo/Primary-Logo.png" alt="Honeyvault Bakery" />
+          <Image
+            src="/images/logo/Primary-Logo.png"
+            alt="Honeyvault Bakery"
+            width={600}
+            height={362}
+            priority
+            sizes="128px"
+          />
         </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">

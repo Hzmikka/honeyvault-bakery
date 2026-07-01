@@ -1,39 +1,41 @@
+import Image from "next/image";
+
 const orderItems = [
   {
     name: "Glazed Croissant Cubes",
-    image: "/images/order_section_images/01_glazed_croissant_cubes.png",
+    image: "/images/order_section_images/01_glazed_croissant_cubes.webp",
   },
   {
     name: "Strawberry Cream Tartlets",
-    image: "/images/order_section_images/02_strawberry_cream_tartlets.png",
+    image: "/images/order_section_images/02_strawberry_cream_tartlets.webp",
   },
   {
     name: "Raspberry Cream Cupcakes",
-    image: "/images/order_section_images/03_raspberry_cream_cupcakes.png",
+    image: "/images/order_section_images/03_raspberry_cream_cupcakes.webp",
   },
   {
     name: "Black Forest Mini Cakes",
-    image: "/images/order_section_images/04_black_forest_mini_cakes.png",
+    image: "/images/order_section_images/04_black_forest_mini_cakes.webp",
   },
   {
     name: "Citrus Cream Cups",
-    image: "/images/order_section_images/05_citrus_cream_cups.png",
+    image: "/images/order_section_images/05_citrus_cream_cups.webp",
   },
   {
     name: "Strawberry Danish Rounds",
-    image: "/images/order_section_images/06_strawberry_danish_rounds.png",
+    image: "/images/order_section_images/06_strawberry_danish_rounds.webp",
   },
   {
     name: "Cherry Blossom Mini Cakes",
-    image: "/images/order_section_images/07_cherry_blossom_mini_cakes.png",
+    image: "/images/order_section_images/07_cherry_blossom_mini_cakes.webp",
   },
   {
     name: "Pastel Cake Pops",
-    image: "/images/order_section_images/08_pastel_cake_pops.png",
+    image: "/images/order_section_images/08_pastel_cake_pops.webp",
   },
   {
     name: "Chocolate Covered Strawberries",
-    image: "/images/order_section_images/09_chocolate_covered_strawberries.png",
+    image: "/images/order_section_images/09_chocolate_covered_strawberries.webp",
   },
 ];
 
@@ -56,8 +58,12 @@ export function LargeOrdersSection() {
         <div className="large-orders-gallery" aria-label="Large order dessert options">
           {orderItems.map((item) => (
             <article className="large-order-card" tabIndex={0} key={item.name}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={item.image} alt={item.name} loading="lazy" decoding="async" />
+              <Image
+                src={item.image}
+                alt={item.name}
+                fill
+                sizes="(max-width: 768px) 72vw, 260px"
+              />
               <span>{item.name}</span>
             </article>
           ))}

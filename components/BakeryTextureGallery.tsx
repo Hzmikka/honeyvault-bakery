@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { KeyboardEvent, useState } from "react";
 import { ShoppingBag } from "lucide-react";
 
@@ -104,10 +105,11 @@ export function BakeryTextureGallery() {
                 onClick={() => selectPastry(index)}
                 onKeyDown={(event) => handleKeyDown(event, index)}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={pastry.image}
                   alt=""
+                  fill
+                  sizes="(max-width: 768px) 42vw, 320px"
                 />
                 <span className="texture-card-sheen" />
               </button>
