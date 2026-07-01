@@ -1662,10 +1662,15 @@ button { cursor: pointer; }
     border-radius: 14px;
   }
   .hero-image-wrap {
-    min-height: 260px;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 1678 / 944;
     border-radius: 12px;
   }
-  .hero-image-wrap img { object-position: center; }
+  .hero-image-wrap img {
+    object-fit: contain;
+    object-position: center;
+  }
   .bakery-finder {
     margin-top: -1.15rem;
     padding: 0 .45rem .65rem;
